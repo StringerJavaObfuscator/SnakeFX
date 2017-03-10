@@ -7,7 +7,7 @@ This is a fork of a simple Java FX game to demonstrate Stringer Obfuscator using
 
 ## Requirements
 - Stringer Standard or Enterpise with a valid license
-- Gradle (optiona)
+- Gradle (optional)
 
 ## Configuring 
 
