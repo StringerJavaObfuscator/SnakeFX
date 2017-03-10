@@ -1,3 +1,31 @@
+## Java FX App Protection
+
+This is a fork of a simple Java FX game to demonstrate Stringer Obfuscator using for similar apps.
+
+## Description
+- https://jfxstore.com/stringer/docs#gradle-plugin
+
+## Requirements
+- Stringer Standard or Enterpise with a valid license
+- Gradle (optiona)
+
+## Configuring 
+
+- Install Stinger and Stringer Gradle plugin to local Maven repository::
+
+```
+mvn install:install-file -Dfile=`pwd`/stringer.jar -DpomFile=`pwd`/stringer.pom
+mvn install:install-file -Dfile=`pwd`/stringer-annotations.jar -DpomFile=`pwd`/stringer-annotations.pom
+mvn install:install-file -Dfile=`pwd`/stringer-gradle-plugin.jar -DpomFile=`pwd`/stringer-gradle-plugin.pom
+```
+
+## Building
+
+```
+./gradlew distZip
+```
+
+
 # SnakeFX
 This is a clone of the old mobile phone game "Snake".
 It was created as an example project to learn *JavaFX*.

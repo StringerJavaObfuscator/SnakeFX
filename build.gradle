@@ -1,21 +1,43 @@
+buildscript {
+    ext {
+	    stringerVersion = '3.0.1'
+    }
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+    dependencies {
+        classpath("com.licel:stringer-gradle-plugin:"+rootProject.ext.stringerVersion)
+	    classpath("com.licel:stringer:"+rootProject.ext.stringerVersion)
+    }
+}
+
 plugins {
     id 'java'
     id 'application'
-    id 'com.github.johnrengelman.shadow' version '1.2.0'
+    id 'com.github.johnrengelman.shadow' version '1.2.4'
 }
+apply plugin: 'stringer'
 
 sourceCompatibility= 1.8
 
 mainClassName = "eu.lestard.snakefx.Launcher"
 
+
+stringer {
+    configFile "${projectDir}/stringer.xml"
+}
+
 repositories {
     mavenLocal()
     mavenCentral()
-    maven{
+    maven {
         url "https://oss.sonatype.org/content/repositories/snapshots/"
     }
+	flatDir {
+		dirs '../../Stringer/stringer-ent-3.0.0'
+	}
 }
-
 
 dependencies {
     compile "org.codehaus.jackson:jackson-mapper-asl:1.9.13"
@@ -36,8 +58,6 @@ dependencies {
     testCompile "junit:junit:4.12"
     testCompile "org.assertj:assertj-core:1.6.1"
     testCompile "org.mockito:mockito-all:1.10.19"
-
-
 }
 
 task wrapper(type: Wrapper) {

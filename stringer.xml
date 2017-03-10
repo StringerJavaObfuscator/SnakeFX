@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<stringer-v3>
+	<verbose>true</verbose>
+	<optimize>true</optimize>
+	<protectionElements>
+		<protectionElement>
+			<paths>
+			   <path>eu/lestard/snakefx</path>
+			</paths>
+			<stringEncryption/>
+			<hideAccess/>
+			<integrityControl/>
+		</protectionElement>
+	</protectionElements>
+</stringer-v3>
