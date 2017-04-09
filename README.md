@@ -19,12 +19,41 @@ mvn install:install-file -Dfile=`pwd`/stringer-annotations.jar -DpomFile=`pwd`/s
 mvn install:install-file -Dfile=`pwd`/stringer-gradle-plugin.jar -DpomFile=`pwd`/stringer-gradle-plugin.pom
 ```
 
-## Building
+## Build the game
+The game is created with Java version 8 so you will need to have Java 8 installed to be able to build the project. 
+The project is based on the build system [gradle](http://http://www.gradle.org/). 
 
-```
-./gradlew distZip
-```
+To build the project type `gradle build`.
 
+## Create Executables
+
+A runnable JAR can be created with `gradle shadowJar`. The JAR file is then located under `build/libs/SnakeFX-all.jar`
+
+## Stringer Protection Examples
+This game uses the [MvvmFX](http://www.lestard.eu/projects/mvvmfx/) framework.
+If you want to encrypt resources (css, fxml files) by Stringer, you should add classes of this framework to the project's jar file and exclude the library from the /libs folder of project distribution archive.
+Examples below show Stringer protection for classes and resources.
+
+### A class without protection 
+![Not Protected Class](img/class.png)
+
+### The class protected by Stringer
+![Protected Class](img/class_protected.png)
+
+### A resource (fxml file) without protection 
+![Not Protected Resource](img/fxml.png)
+
+### The resource protected by Stringer
+![Protected Resource](img/fxml_protected.png)
+
+### A resource (fxml file) without protection 
+![Not Protected Resource](img/css.png)
+
+### The resource protected by Stringer
+![Protected Resource](img/css_protected.png)
+
+### A service class created by Stringer for the resources above
+![Service Class](img/class_service.png)
 
 # SnakeFX
 This is a clone of the old mobile phone game "Snake".
@@ -40,13 +69,4 @@ food. Every time the snake eats some food it grows a little bit. You may not bit
 You can download a runnable JAR from the [release-secton](https://github.com/lestard/SnakeFX/releases/download/v0.1.0/snakefx.0.1.0.jar) of github. To run the game you need Oracles Java version 8 installed.
 
 
-### Build the game
-The game is created with Java version 8 so you will need to have Java 8 installed to be able to build the project. 
-The project is based on the build system [gradle](http://http://www.gradle.org/). 
 
-To build the project type `gradle build`. To run the application you can type `gradle run`.
-
-
-### Create Executables
-
-A runnable JAR can be created with `gradle shadowJar`. The JAR file is then located under `build/libs/snakefx-all.jar`

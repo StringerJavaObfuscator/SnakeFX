@@ -4,12 +4,10 @@
 	<optimize>true</optimize>
 	<protectionElements>
 		<protectionElement>
-			<paths>
-			   <path>eu/lestard/snakefx</path>
-			</paths>
 			<stringEncryption/>
 			<hideAccess/>
 			<integrityControl/>
+			<resourceEncryption/>
 		</protectionElement>
 	</protectionElements>
 </stringer-v3>
